@@ -1,0 +1,94 @@
+
+# 1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui !
+
+'Not Only SQL' atau biasa disingkat NoSQL atau sering juga disebut sebagai 'Non-SQL'.
+
+NoSQL merupakan manajamen databese yang tidak menggunakan model relasional pada umumnya yang biasa kita temukan dalam sistem database traditional (RDBMS) seperti pada mySQL ataupun PostgreSQL yang mana penggunaan nya lebih kaku dan terstruktur. 
+
+Fungsi utama NoSQL adalah sebagai alternatif untuk sistem database relasional untuk task spesifik contoh untuk big data, real-time web apps, dan aplikasi yang memerlukan skalabilitas horizontal yang tinggi.
+
+---
+
+# 2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System !
+
+## Kapan Menggunakan NoSQL:
+
+- Ketika aplikasi atau program yang akan dibuat akan menghandle data yang sangat besar dan tidak terstruktur, seperti data IoT sensor, real time media sosial, atau log pada aplikasi.
+
+- Ketika struktur data yang digunakan flexible dan berubah setiap waktu, seperti pada aplikasi yang menggunakan data JSON atau XML.
+
+- Data yang di gunakan non-relasional, seperti data graf, key-value, atau dokumen.
+
+- Ketika kita membutuhkan performansi yang tinggi dan skalabilitas horizontal, seperti pada aplikasi yang memerlukan penanganan data dalam jumlah besar secara real-time.
+
+## Kapan Menggunakan RDBMS:
+
+- Ketika data yang digunakan memeliki struktur yang jelas dan terdefinisi, sehingga bisa di handle dengan menggunakan tabel dan relasi antar tabel.
+
+- Data yang digunakan membutuhkan relasi antar tabel yang kompleks untuk melakukan joins.
+
+- Data yang digunakan memerlukan integritas data yang tinggi dan konsistensi yang ketat.
+
+- Ketika data utama yang ingin digunakan dalam bentuk SQL.
+
+In summary, RDBMS lebih cocok untuk aplikasi yang memerlukan struktur data yang jelas, relasi yang kompleks, dan integritas data yang tinggi. Sementara NoSQL, lebih sesuai untuk aplikasi yang menangani data besar, tidak terstruktur, dan memerlukan skalabilitas tinggi.
+
+Contoh penggunaan:
+- **NoSQL:** Aplikasi media sosial yang menangani jutaan postingan dan komentar setiap detik, di mana data yang disimpan tidak terstruktur dan sering berubah.
+
+- **RDBMS:** Sistem transaksi perbankan yang memerlukan integritas data tinggi, seperti memastikan stok barang selalu akurat dan transaksi keuangan tercatat dengan benar.
+
+---
+
+# 3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut !
+
+1. **MongoDB**
+   - **Keunggulan:**
+     - Memiliki schema fleksibel yang memungkinkan penyimpanan data dalam format dokumen JSON-like (BSON).
+     - Di desain untuk horizontal scaling, sehingga dapat menangani volume data yang sangat besar dengan mudah.
+     - Menggunakan query language yang mudah digunakan dan mendukung operasi CRUD (Create, Read, Update, Delete) yang efisien.
+
+2. **Cassandra**
+   - **Keunggulan:**
+    - Dapat menangani data dalam skala besar dan dapat di scale secara linier dengan menambahkan lebih banyak node ke cluster ataupun servers.
+    - No single point of failure sehingga data tetap tersedia meskipun ada node yang mengalami kerusakan. (Always available).
+    - Cocok digunakan untuk aplikasi yang memerlukan write-heavy workloads atau memiliki data yang masuk dalam jumlah besar secara terus-menerus.
+
+# 4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri !
+
+Secara singkat Airflow adalah platform yang dapat digunakan untuk membuat, menjadwalkan, dan memantau alur kerja data (data workflows) secara otomatis. 
+
+Airflow memungkinkan pengguna untuk mendefinisikan alur kerja dengan menggunakan code seperti Python dan mengisyaratkan task apa yang harus dilakukan terlebih dahulu sesuai dengan order yang telah kita tentukan. Setelah itu, Airflow akan menjalankan task tersebut sesuai dengan jadwal yang telah ditentukan.
+
+Airflow memiliki interface dimana kita bisa memonitor alur kerja yang telah kita buat, melihat status dari setiap task, dan melakukan debugging jika ada yang error.
+---
+
+# 5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri !
+
+Great Expectations merupakan tools yang membantu kita memastikan data yang akan kita gunakan untuk project ataupun aplikasi memeliki kualitas yang baik dan sesuai dengan ekspektasi kita. Dimana ekspetasi tersebut kita definisikan sendiri dengan menjabarkan rules atau checklist yang harus dipenuhi oleh data tersebut.
+
+Dengan menggukana Great Expectations kita bisa melakukan validasi data sesuai denga rules yang telah kita buat dan kita bisa mendapatkan laporan tentang kualitas data tersebut dalam bentuk informasi 'passed' or 'failed' untuk setiap rule yang telah kita definisikan.
+
+Singkatnya, kita bisa menyebut Great Expectations sebagai quality control check yang sangat berguna ketika kita mempunyai data yang sangat besar dan kompleks, sehingga kita bisa memastikan data tersebut sesuai dengan ekspektasi kita sebelum digunakan untuk analisis atau aplikasi. (Early detection of data issues).
+
+---
+
+# 6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+
+Batch Processing adalah metode dimana kita mengumpulkan data dalam jumlah besar dan memprosesnya secara bersamaan ataupun dalam satu 'batch'.
+
+Metode ini bertolak belakang dengan metode streaming atau real-time processing, dimana data diproses secara terus-menerus dan langsung saat data tersebut masuk. Batch processing mengumpulkan data terlebih dahulu, kemudian memprosesnya dalam satu batch secara periodik sesuai dengan jadwal yang kita tentukan.
+
+## Use Case Penggunaan:
+- **Payroll:** Proses penggajian karyawan yang dilakukan setiap bulan, di mana data jam kerja, lembur, dan potongan dikumpulkan dan diproses dalam satu batch untuk menghitung gaji yang harus dibayarkan.
+
+- **Data Reporting:** Pembuatan laporan secara berkala contoh mingguan, bulanan atau kuartal yang mengumpulkan data transaksi selama periode tertentu dan memprosesnya untuk menghasilkan laporan yang dibutuhkan. Contoh Sales Report, Inventory Report, Financial Report dan Promotion Report.
+
+- **Data Transformation (ETL):** Contoh kita memiliki data mentah yang perlu diolah sebelum digunakan untuk analisis, seperti membersihkan data, menggabungkan data dari berbagai sumber, atau mengubah format data. Proses ini dapat dilakukan secara batching overnight atau pada waktu tertentu untuk mengurangi beban pada sistem saat jam sibuk.
+
+## Contoh Tools untuk Batch Processing:
+- **Apache Airflow:** Platform untuk mengatur, menjadwalkan, dan memantau alur kerja data secara otomatis. Airflow memungkinkan pengguna untuk mendefinisikan alur kerja dengan menggunakan coding language seperti Python dan mengatur eskeskusi tugas sesuai urutan yang telah kita tentukan.
+
+- **Apache Spark:** Framework untuk pemrosesan data dengan ukuran batch yang besar dan kompleks. Spark menyediakan API yang mudah digunakan untuk melakukan transformasi data, analisis, dan machine learning pada data dalam skala besar.
+
+- **Hadoop MapReduce:** Sistem pemrosesan untuk data dengan batch skala besar yang menggunakan model pemrograman MapReduce. Cara kerja MapReduce membagi tugas pemrosesan data menjadi dua fase: Map (mengolah data) dan Reduce (menggabungkan hasil dari fase Map) yang jalan di beberapa computer dalam cluster secara paralel.

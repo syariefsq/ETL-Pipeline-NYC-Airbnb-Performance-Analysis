@@ -1,0 +1,49 @@
+-- File: P2M3_syarief_qayum_ddl.txt
+-- This file contains the DDL for creating a table to store Airbnb data.
+-- The table will include various fields such as id, name, host information, location, pricing, and review details.
+
+-- Create a table named 'table_m3' to store Airbnb data.
+-- The table will include fields for id, name, host information, location, pricing, and review details.
+-- The data types are chosen based on the expected content of each field.
+
+CREATE TABLE table_m3 (
+    id INT,
+    NAME VARCHAR,
+    "host id" VARCHAR, 
+    host_identity_verified VARCHAR, 
+    "host name" VARCHAR, 
+    "neighbourhood group" VARCHAR, 
+    neighbourhood VARCHAR,
+    lat FLOAT, 
+    long FLOAT, 
+    country VARCHAR,
+    "country code" VARCHAR, 
+    instant_bookable VARCHAR, 
+    cancellation_policy VARCHAR, 
+    "room type" VARCHAR, 
+    "Construction year" INT,
+    price VARCHAR, 
+    "service fee" VARCHAR, 
+    "minimum nights" INT, 
+    "number of reviews" INT, 
+    "last review" DATE, 
+    "reviews per month" FLOAT, 
+    "review rate number" INT, 
+    "calculated host listings count" INT, 
+    "availability 365" INT, 
+    house_rules VARCHAR,
+    license VARCHAR 
+);
+
+-- After creating the table, we will load data from a CSV file into the table.
+
+SELECT * FROM table_m3
+
+-- Load data into the table from a CSV file.
+-- The CSV file is expected to be located at '/tmp/Airbnb_Open_Data.csv'.
+-- The data is delimited by commas and includes a header row.
+
+COPY table_m3 
+FROM '/tmp/Airbnb_Open_Data.csv'
+DELIMITER ','
+CSV HEADER;
