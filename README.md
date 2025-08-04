@@ -1,3 +1,5 @@
+![](Airbnb-Performance-Analysis.png)
+
 # 🏙️ NYC Airbnb Listing Performance Analysis — My Data Engineering Journey
 
 ## 👋 Hi, I’m Syarief!
@@ -46,3 +48,4 @@ Welcome! I built this project to dive deep into the real-world impact of NYC’s
 ## 🤝 Let’s Connect!
 
 I’m always eager to learn, collaborate, and improve. If you have feedback, ideas, or opportunities for collaboration, please reach out! Whether you’re a fellow data enthusiast, a recruiter, or just curious, I’d love to hear from you.
+
